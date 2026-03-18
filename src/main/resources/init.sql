@@ -1,0 +1,24 @@
+CREATE TABLE IF NOT EXISTS statuses (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE,
+);
+
+CREATE TABLE IF NOT EXISTS tasks (
+    id BIGSERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    status_id BIGINT NOT NULL,
+    priority INTEGER NOT NULL,
+    due_date DATE,
+    created_at TIMESTAMP NOT NULL,
+    updated_at TIMESTAMP NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS subtasks (
+    id BIGSERIAL PRIMARY KEY,
+    task_id BIGINT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    is_completed BOOLEAN NOT NULL DEFAULT FALSE,
+    position INTEGER NOT NULL,
+    created_at TIMESTAMP NOT NULL
+);

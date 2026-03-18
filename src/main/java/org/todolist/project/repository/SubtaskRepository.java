@@ -29,6 +29,7 @@ public interface SubtaskRepository extends JpaRepository<Subtask, Long> {
     Long countByTaskIdAndIsCompletedFalse(Long taskId);
 
     // Удалить все подзадачи для задачи
+
     void deleteByTaskId(Long taskId);
 
     // Получить прогресс задачи (кастомный запрос)

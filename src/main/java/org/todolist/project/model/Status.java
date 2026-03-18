@@ -13,16 +13,12 @@ public class Status {
     @Column(nullable = false, unique = true)
     private String name;
 
-    @Column
-    private String color;
-
     // 1. Пустой конструктор (обязателен для JPA!)
     public Status() {}
 
     // 2. Конструктор для удобства
-    public Status(String name, String color) {
+    public Status(String name) {
         this.name = name;
-        this.color = color;
     }
 
     // Геттеры и сеттеры
@@ -40,13 +36,5 @@ public class Status {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 }
