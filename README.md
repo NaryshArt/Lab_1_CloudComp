@@ -35,6 +35,8 @@ REST API для управления задачами с поддержкой п
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 POSTGRES_DB=todolist
+DB_HOST=db
+DB_PORT=5432
 ```
 
 2. **Запустить сервисы**:
