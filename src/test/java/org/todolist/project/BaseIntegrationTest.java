@@ -20,7 +20,7 @@ import org.todolist.project.repository.TaskRepository;
 @Transactional
 @Testcontainers
 public abstract class BaseIntegrationTest {
-
+ 
     @Container
     static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:15-alpine");
 
