@@ -22,7 +22,7 @@ class TaskControllerTest extends BaseIntegrationTest {
         validStatusId = statusRepository.save(new Status("Todo")).getId();
     }
 
-    // --- GET /api/tasks ---
+
 
     @Test
     void getAll_returnsEmptyList_whenNoTasks() throws Exception {
@@ -43,7 +43,7 @@ class TaskControllerTest extends BaseIntegrationTest {
                 .andExpect(jsonPath("$[1].title").value("First"));
     }
 
-    // --- GET /api/tasks/{id} ---
+
 
     @Test
     void getById_returnsTask() throws Exception {
@@ -63,7 +63,7 @@ class TaskControllerTest extends BaseIntegrationTest {
                 .andExpect(status().is5xxServerError());
     }
 
-    // --- POST /api/tasks ---
+
 
     @Test
     void create_persistsTaskAndReturnsIt() throws Exception {
@@ -105,7 +105,7 @@ class TaskControllerTest extends BaseIntegrationTest {
                 .andExpect(status().is5xxServerError());
     }
 
-    // --- PUT /api/tasks/{id} ---
+
 
     @Test
     void update_changesTaskFields() throws Exception {
@@ -147,7 +147,7 @@ class TaskControllerTest extends BaseIntegrationTest {
                 .andExpect(status().is5xxServerError());
     }
 
-    // --- DELETE /api/tasks/{id} ---
+
 
     @Test
     void delete_removesTaskAndItsSubtasks() throws Exception {

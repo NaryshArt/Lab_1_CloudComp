@@ -18,8 +18,7 @@ import org.todolist.project.repository.TaskRepository;
 @Transactional
 public abstract class BaseIntegrationTest {
 
-    // Singleton: контейнер запускается один раз на весь JVM-процесс,
-    // чтобы Spring-контекст не получал мёртвый URL при смене тест-класса.
+
     static final PostgreSQLContainer<?> postgres;
 
     static {

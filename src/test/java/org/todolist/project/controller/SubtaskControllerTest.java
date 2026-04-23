@@ -23,7 +23,7 @@ class SubtaskControllerTest extends BaseIntegrationTest {
         taskId = taskRepository.save(new Task("Parent Task", null, statusId, Priority.MEDIUM)).getId();
     }
 
-    // --- GET /api/subtasks/task/{taskId} ---
+
 
     @Test
     void getByTaskId_returnsEmptyList_whenNoSubtasks() throws Exception {
@@ -46,7 +46,7 @@ class SubtaskControllerTest extends BaseIntegrationTest {
                 .andExpect(jsonPath("$[2].title").value("Third"));
     }
 
-    // --- POST /api/subtasks ---
+
 
     @Test
     void create_persistsSubtaskAndReturnsIt() throws Exception {
@@ -87,7 +87,7 @@ class SubtaskControllerTest extends BaseIntegrationTest {
                 .andExpect(status().is5xxServerError());
     }
 
-    // --- PATCH /api/subtasks/{id}/toggle ---
+
 
     @Test
     void toggle_switchesCompletionFromFalseToTrue() throws Exception {
@@ -116,7 +116,7 @@ class SubtaskControllerTest extends BaseIntegrationTest {
                 .andExpect(status().is5xxServerError());
     }
 
-    // --- DELETE /api/subtasks/{id} ---
+
 
     @Test
     void delete_removesSubtask() throws Exception {
