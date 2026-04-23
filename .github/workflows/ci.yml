@@ -58,7 +58,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Run tests with coverage (fails if < 50%)
+      - name: Run tests with coverage
         run: mvn verify --no-transfer-progress
 
       - name: Upload JaCoCo coverage report
