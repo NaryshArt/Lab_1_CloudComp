@@ -23,7 +23,9 @@ public class TaskService {
 
     public List<TaskResponseDTO> getAllTasks() {
         return taskRepository.findAllByOrderByCreatedAtDesc()
-                .stream().map(this::toResponse).collect(Collectors.toList());
+                .stream()
+                .map(this::toResponse)
+                .collect(Collectors.toList());
     }
 
     public TaskResponseDTO getById(Long id) {
